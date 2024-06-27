@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <form id="bookingForm" action="process.php" method="post">
+    <h2>Booking Form</h2>
+
+    <div class="form-group type">
+      <label for="type">Service type</label>
+      <select id="type" name="type" required>
+        <option value="" selected disabled>Select service type</option>
+        <option value="1">Normal</option>
+        <option value="2">Water Wax</option>
+        <option value="3">Deep Clean</option>
+      </select>
+    </div>
+
+    <div class="form-group datetime">
+      <label for="datetime">Choose Date</label>
+      <input type="date" id="date" name="date" required>
+      <label for="datetime">Choose Time</label>
+      <select id="time" name="time" required>
+        <option value="" disabled selected>Select Time</option>
+      </select>
+    </div>
+
+    <div class="form-group submit-btn">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
+  <!-- Popup Modal -->
+  <div id="popupModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="popupMessage"></p>
+    </div>
+  </div>
+
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</body>
+</html>
